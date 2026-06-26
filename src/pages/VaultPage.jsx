@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Database, Loader2, Link as LinkIcon, Building2 } from 'lucide-react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from '@mysten/dapp-kit';
 
 const VaultPage = () => {
   const navigate = useNavigate();

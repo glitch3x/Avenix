@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Upload, FileText, CheckCircle2, ShieldAlert, BarChart3, Code2, Link as LinkIcon, Database, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AgentPipeline from '../components/AgentPipeline';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from '@mysten/dapp-kit';
 
 const DashboardPage = () => {
   const navigate = useNavigate();

@@ -1,0 +1,57 @@
+.hero-animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.fiber-svg {
+  width: 100%;
+  min-width: 1200px;
+  height: 100%;
+  opacity: 0.9;
+  animation: pulseOpacity 8s ease-in-out infinite alternate;
+}
+
+.fiber-path {
+  stroke-dasharray: 800 1200;
+  animation: fiberFlow linear infinite;
+  stroke-linecap: round;
+}
+
+@keyframes pulseOpacity {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes fiberFlow {
+  from { stroke-dashoffset: 2000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Individual animation timings for organic, flowing look */
+.p1 { animation-duration: 8s; stroke-dasharray: 600 1400; }
+.p2 { animation-duration: 11s; stroke-dasharray: 400 1600; }
+.p3 { animation-duration: 6s; stroke-dasharray: 700 1300; }
+.p4 { animation-duration: 9s; stroke-dasharray: 500 1500; }
+.p5 { animation-duration: 5s; stroke-dasharray: 800 1200; }
+.p6 { animation-duration: 10s; stroke-dasharray: 450 1550; }
+.p7 { animation-duration: 7s; stroke-dasharray: 650 1350; }
+.p8 { animation-duration: 12s; stroke-dasharray: 350 1650; }
+.p9 { animation-duration: 8.5s; stroke-dasharray: 550 1450; }
+
+.b1 { animation-duration: 9s; stroke-dasharray: 600 1400; }
+.b2 { animation-duration: 12s; stroke-dasharray: 400 1600; }
+.b3 { animation-duration: 7s; stroke-dasharray: 700 1300; }
+.b4 { animation-duration: 10s; stroke-dasharray: 500 1500; }
+.b5 { animation-duration: 6s; stroke-dasharray: 800 1200; }
+.b6 { animation-duration: 11s; stroke-dasharray: 450 1550; }
+.b7 { animation-duration: 8s; stroke-dasharray: 650 1350; }
+.b8 { animation-duration: 13s; stroke-dasharray: 350 1650; }
+.b9 { animation-duration: 9.5s; stroke-dasharray: 550 1450; }

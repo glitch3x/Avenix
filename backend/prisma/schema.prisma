@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  wallet    String?  @unique
+  email     String?  @unique
+  createdAt DateTime @default(now())
+  assets    Asset[]
+}
+
+model Asset {
+  id              String             @id @default(cuid())
+  name            String
+  type            String
+  estimatedValue  Float
+  userId          String?
+  user            User?              @relation(fields: [userId], references: [id])
+  createdAt       DateTime           @default(now())
+  pipelineRuns    TokenizationRun[]
+}
+
+model TokenizationRun {
+  id              String   @id @default(cuid())
+  assetId         String
+  asset           Asset    @relation(fields: [assetId], references: [id])
+  
+  // Agent 1 Outputs
+  status          String
+  jurisdiction    String?
+  riskLevel       String?
+  
+  // Agent 2 Outputs
+  assetValue      Float?
+  tokenSupply     Int?
+  tokenPrice      Float?
+  
+  // Agent 3 Outputs
+  network         String?
+  tokenStandard   String?
+  contractAddress String?
+  
+  createdAt       DateTime @default(now())
+}
